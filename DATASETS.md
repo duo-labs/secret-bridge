@@ -1,0 +1,11 @@
+Studying historical GitHub datasets allows you to identify trends over time and answer questions about the larger state of open-source software development.
+
+Here is a curated list of academic datasets containing historical GitHub data:
+
+| Name                  | URL                                                                                                                                           | Dataset Type                                                                                                   |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| GHTorrent             | http://ghtorrent.org/                                                                                                                         | MySQL and Mongo database dumps of the GitHub event stream                                                      |
+| GHTorrent - BigQuery  | http://ghtorrent.org/gcloud.html                                                                                                              | Access to GHTorrent data via BigQuery                                                                          |
+| GH Archive            | https://www.gharchive.org/                                                                                                                    | Compressed JSON dumps of the GitHub event stream                                                               |
+| GH Archive - BigQuery | https://bigquery.cloud.google.com/table/githubarchive:day.20190827?pli=1&tab=preview                                                          | Access to GH Archive data via BigQuery                                                                         |
+| GitHub - BigQuery     | https://console.cloud.google.com/marketplace/details/github/github-repos?filter=solution-type:dataset&id=46ee22ab-2ca4-4750-81a7-3ee0f0150dcb | Access to a full snapshot of the content of more than 2.8 million open source GitHub repositories via BigQuery |

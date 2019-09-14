@@ -1,0 +1,21 @@
+detectors = [
+    "detect-secrets",
+    "git-secrets"
+]
+
+[auth]
+access_token='env'
+
+[monitors]
+    organizations = []
+    users = []
+    repos = []
+
+[webhook]
+    secret=""
+    host="0.0.0.0"
+
+[notifiers.console]
+
+[notifiers.slack_webhook]
+    webhook_url=''
