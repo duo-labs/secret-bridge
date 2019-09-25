@@ -107,5 +107,5 @@ Running Via Docker
 ------------------
 
 ```
-docker run -ti --rm duo-labs/secret-bridge poll
+docker run -ti --rm duolabs/secret-bridge poll
 ```
