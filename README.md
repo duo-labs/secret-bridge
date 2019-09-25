@@ -107,5 +107,5 @@ Running Via Docker
 ------------------
 
 ```
-docker run -ti --rm duolabs/secret-bridge poll
+docker run -ti --rm -e GITHUB_WATCHER_TOKEN=your_access_token duolabs/secret-bridge poll
 ```
