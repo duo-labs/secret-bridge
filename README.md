@@ -3,7 +3,7 @@ secret-bridge
 
 A bridge to help increase your ability to detect secrets shared on Github.
 
-More details on the methodology can be found in our [blog post](TODO).
+More details on the methodology can be found in our [blog post](https://duo.com/labs/research/how-to-monitor-github-for-secrets).
 
 How It Works
 ============
