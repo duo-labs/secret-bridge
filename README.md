@@ -30,6 +30,10 @@ Via Docker
 
 The easiest way to get started is by using our Docker image. You can see how to run the Docker image in the Usage section below.
 
+```
+docker pull duolabs/secret-bridge
+```
+
 Installation from Source
 ------------------------
 
