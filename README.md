@@ -28,7 +28,7 @@ Installation
 Via Docker
 ----------
 
-The easiest way to get started is by using our Docker image. You can see how to run the Docker image in the Usage section below.
+The easiest way to get started is by using our Docker image. You can see how to run the Docker image in the [Usage section](#running-via-docker).
 
 Installation from Source
 ------------------------
