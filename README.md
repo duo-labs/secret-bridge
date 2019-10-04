@@ -20,7 +20,7 @@ Once events are received indicating that new code has been pushed, this script e
 
 A more general listing of tools which can be used to detect secrets in Git repositories can be found in [TOOLS.md](TOOLS.md)
 
-If a secret is found, it is sent upstream to a *notifier*. At this time, we support notifying both via stdout as well as Slack.
+If a secret is found, it is sent upstream to a *notifier*. At this time, we support notifying both via stdout as well as Slack and Microsoft Teams.
 
 Installation
 ============
@@ -77,16 +77,16 @@ Detectors are configured via the `detectors` configuration value. Right now, the
 Setting Up the Notifiers
 ------------------------
 
-If a secret is detected, we will notify you using your configured `notifiers`. Currently, the two notification methods are printing to the console, and notifying via Slack.
+If a secret is detected, we will notify you using your configured `notifiers`. Currently, the two notification methods are printing to the console, and notifying via a Slack/Teams webhook. 
 
-To configure Slack notifications, create the following configuration option with the `webhook_url` provided by Slack:
+For webhook notifications, both Slack and Microsoft Teams implementations work identically: the JSON structure used to call the Slack webhook is the same as for Microsoft Teams, the implementation is just currently not updated to reflect this. To configure Teams notifications, follow these same steps but with a Teams Connector.
+
+To configure Slack/Teams notifications, create the following configuration option with the `webhook_url` provided by Slack:
 
 ```toml
 [notifiers.slack_webhook]
     webhook_url='your_webhook_url'
 ```
-
-Note that the JSON structure used to call the Slack webhook is the same as for Microsoft Teams. To configure Teams notifications, follow the same steps above but with a Teams Connector.
 
 Usage
 =====
