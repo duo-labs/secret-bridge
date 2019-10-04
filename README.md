@@ -86,6 +86,8 @@ To configure Slack notifications, create the following configuration option with
     webhook_url='your_webhook_url'
 ```
 
+Note that the JSON structure used to call the Slack webhook is the same as for Microsoft Teams. To configure Teams notifications, follow the same steps above but with a Teams Connector.
+
 Usage
 =====
 
