@@ -28,11 +28,8 @@ Installation
 Via Docker
 ----------
 
-The easiest way to get started is by using our Docker image. You can see how to run the Docker image in the Usage section below.
+The easiest way to get started is by using our Docker image. You can see how to pull and run the Docker image in the [Usage section](#Running-Via-Docker) below.
 
-```
-docker pull duolabs/secret-bridge
-```
 
 Installation from Source
 ------------------------
@@ -113,3 +110,5 @@ Running Via Docker
 ```
 docker run -ti --rm -e GITHUB_WATCHER_TOKEN=your_access_token duolabs/secret-bridge poll
 ```
+
+*Note that this is the only docker command needed to get the tool up and running. Relevant images will be automatically pulled if they are not found locally.*
