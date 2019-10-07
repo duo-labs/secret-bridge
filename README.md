@@ -30,6 +30,7 @@ Via Docker
 
 The easiest way to get started is by using our Docker image. You can see how to run the Docker image in the [Usage section](#running-via-docker).
 
+
 Installation from Source
 ------------------------
 
@@ -111,3 +112,5 @@ Running Via Docker
 ```
 docker run -ti --rm -e GITHUB_WATCHER_TOKEN=your_access_token duolabs/secret-bridge poll
 ```
+
+*Note that this is the only docker command needed to get the tool up and running. Relevant images will be automatically pulled if they are not found locally.*
