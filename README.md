@@ -111,5 +111,3 @@ Running Via Docker
 ```
 docker run -ti --rm -e GITHUB_WATCHER_TOKEN=your_access_token duolabs/secret-bridge poll
 ```
-
-testpassword="test"
