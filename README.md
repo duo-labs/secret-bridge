@@ -17,6 +17,7 @@ Once events are received indicating that new code has been pushed, this script e
 
 -	[`detect-secrets`](https://github.com/Yelp/detect-secrets)
 -	[`git-secrets`](https://github.com/awslabs/git-secrets)
+- [`trufflehog`](https://github.com/dxa4481/truffleHog)
 
 A more general listing of tools which can be used to detect secrets in Git repositories can be found in [TOOLS.md](TOOLS.md)
 
@@ -71,6 +72,7 @@ Detectors are configured via the `detectors` configuration value. Right now, the
 
 -	`detect-secrets`
 -	`git-secrets`
+- `trufflehog`
 
 > Note: It's expected that the detector you use is installed and available on your `$PATH`. If you are running this via the Docker image, all the required tools are pre-installed.
 
@@ -111,5 +113,3 @@ Running Via Docker
 ```
 docker run -ti --rm -e GITHUB_WATCHER_TOKEN=your_access_token duolabs/secret-bridge poll
 ```
-
-testpassword="test"
