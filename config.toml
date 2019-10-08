@@ -1,6 +1,7 @@
 detectors = [
     "detect-secrets",
-    "git-secrets"
+    "git-secrets",
+    "trufflehog"
 ]
 
 [auth]
