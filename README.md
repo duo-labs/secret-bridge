@@ -110,6 +110,10 @@ Running Via Docker
 
 ```
 docker run -ti --rm -e GITHUB_WATCHER_TOKEN=your_access_token duolabs/secret-bridge poll
+<<<<<<< HEAD
 ```
 
 testpassword="test"
+=======
+```
+>>>>>>> 24927d4... fresh branch for adding trufflehog support
