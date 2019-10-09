@@ -31,6 +31,7 @@ Via Docker
 
 The easiest way to get started is by using our Docker image. You can see how to run the Docker image in the [Usage section](#running-via-docker).
 
+
 Installation from Source
 ------------------------
 
@@ -81,7 +82,9 @@ Setting Up the Notifiers
 
 If a secret is detected, we will notify you using your configured `notifiers`. Currently, the two notification methods are printing to the console, and notifying via a Slack/Teams webhook. 
 
+
 For webhook notifications, both Slack and Microsoft Teams implementations work identically: the JSON structure used to call the Slack webhook is the same as for Microsoft Teams, the implementation is just currently not updated to reflect this. To configure Teams notifications, follow these same steps but with a Teams Connector.
+
 
 To configure Slack/Teams notifications, create the following configuration option with the `webhook_url` provided by Slack:
 
@@ -112,4 +115,8 @@ Running Via Docker
 
 ```
 docker run -ti --rm -e GITHUB_WATCHER_TOKEN=your_access_token duolabs/secret-bridge poll
+
 ```
+
+*Note that this is the only docker command needed to get the tool up and running. Relevant images will be automatically pulled if they are not found locally.*
+
