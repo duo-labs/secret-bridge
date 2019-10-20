@@ -119,4 +119,3 @@ docker run -ti --rm -e GITHUB_WATCHER_TOKEN=your_access_token duolabs/secret-bri
 ```
 
 *Note that this is the only docker command needed to get the tool up and running. Relevant images will be automatically pulled if they are not found locally.*
-
