@@ -17,7 +17,7 @@ Once events are received indicating that new code has been pushed, this script e
 
 -	[`detect-secrets`](https://github.com/Yelp/detect-secrets)
 -	[`git-secrets`](https://github.com/awslabs/git-secrets)
-- [`trufflehog`](https://github.com/dxa4481/truffleHog)
+-	[`trufflehog`](https://github.com/dxa4481/truffleHog)
 
 A more general listing of tools which can be used to detect secrets in Git repositories can be found in [TOOLS.md](TOOLS.md)
 
@@ -73,7 +73,7 @@ Detectors are configured via the `detectors` configuration value. Right now, the
 
 -	`detect-secrets`
 -	`git-secrets`
-- `trufflehog`
+-	`trufflehog`
 
 > Note: It's expected that the detector you use is installed and available on your `$PATH`. If you are running this via the Docker image, all the required tools are pre-installed.
 
@@ -82,9 +82,7 @@ Setting Up the Notifiers
 
 If a secret is detected, we will notify you using your configured `notifiers`. Currently, the two notification methods are printing to the console, and notifying via a Slack/Teams webhook. 
 
-
 For webhook notifications, both Slack and Microsoft Teams implementations work identically: the JSON structure used to call the Slack webhook is the same as for Microsoft Teams, the implementation is just currently not updated to reflect this. To configure Teams notifications, follow these same steps but with a Teams Connector.
-
 
 To configure Slack/Teams notifications, create the following configuration option with the `webhook_url` provided by Slack:
 
@@ -115,7 +113,6 @@ Running Via Docker
 
 ```
 docker run -ti --rm -e GITHUB_WATCHER_TOKEN=your_access_token duolabs/secret-bridge poll
-
 ```
 
 *Note that this is the only docker command needed to get the tool up and running. Relevant images will be automatically pulled if they are not found locally.*

@@ -30,7 +30,7 @@ class TruffleHog(Detector):
         see: https://developer.github.com/v3/repos/commits/#get-a-single-commit
         """
         self.logger.info("instantiating trufflehog")
-        #dummy_repo_url value needed by trufflehog as filler field, since no remote repo is being used
+        # dummy_repo_url value needed by trufflehog as filler field, since no remote repo is being used
         sp = subprocess.run([self._binary_path, "--json", "--repo_path", ".", "dummy_repo_url"], cwd=repo_dir, capture_output=True)
 
         if sp.returncode not in [0, 1]:
