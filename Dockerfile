@@ -19,6 +19,9 @@ RUN make install
 # detect-secrets
 RUN pip install detect-secrets
 
+# trufflehog
+RUN pip install trufflehog
+
 WORKDIR /usr/src/app
 COPY . .
 ENTRYPOINT ["python", "main.py"]
