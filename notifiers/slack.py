@@ -13,7 +13,7 @@ class SlackWebhookNotifier(Notifier):
 
         self._webhook_url = config['webhook_url']
 
-        if self._webhook_url == 'env':
+        if self._webhook_url == 'env' or environ.get('SLACK_WEBHOOK_URL') != '':
             self._webhook_url = environ.get('SLACK_WEBHOOK_URL')
 
     def process(self, findings, detector_name):

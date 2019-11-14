@@ -21,13 +21,13 @@ class WatcherConfig:
         self._config = toml.load(filepath)
 
         self.access_token = self._config['auth']['access_token']
-        if self.access_token == 'env':
+        if self.access_token == 'env' or environ.get('GITHUB_WATCHER_TOKEN') != '':
             self.access_token = environ.get('GITHUB_WATCHER_TOKEN')
 
         self.webhook = self._config['webhook']
-        if self.webhook['secret'] == 'env':
+        if self.webhook['secret'] == 'env' or environ.get('GITHUB_WEBHOOK_SECRET') != '':
             self.webhook['secret'] = environ.get('GITHUB_WEBHOOK_SECRET')
-        if self.webhook['host'] == 'env':
+        if self.webhook['host'] == 'env' or environ.get('GITHUB_WEBHOOK_HOST') != '':
             self.webhook['host'] = environ.get('GITHUB_WEBHOOK_HOST')
             
         for detector in self._config['detectors']:
