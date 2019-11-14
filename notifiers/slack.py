@@ -1,3 +1,5 @@
+from os import environ
+
 from notifiers.notifier import Notifier
 from notifiers import Registry
 import requests
@@ -10,6 +12,9 @@ class SlackWebhookNotifier(Notifier):
             raise Exception("webhook_url not found in config file")
 
         self._webhook_url = config['webhook_url']
+
+        if self._webhook_url == 'env':
+            self._webhook_url = environ.get('SLACK_WEBHOOK_URL')
 
     def process(self, findings, detector_name):
         """Send a list of findings via Slack incoming webhook."""

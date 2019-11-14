@@ -13,10 +13,10 @@ access_token='env'
     repos = []
 
 [webhook]
-    secret=""
+    secret="env"
     host="0.0.0.0"
 
 [notifiers.console]
 
 [notifiers.slack_webhook]
-    webhook_url=''
+    webhook_url='env'

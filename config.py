@@ -25,7 +25,11 @@ class WatcherConfig:
             self.access_token = environ.get('GITHUB_WATCHER_TOKEN')
 
         self.webhook = self._config['webhook']
-
+        if self.webhook['secret'] == 'env':
+            self.webhook['secret'] = environ.get('GITHUB_WEBHOOK_SECRET')
+        if self.webhook['host'] == 'env':
+            self.webhook['host'] = environ.get('GITHUB_WEBHOOK_HOST')
+            
         for detector in self._config['detectors']:
             if detector not in AvailableDetectors:
                 logging.error(
