@@ -1,6 +1,7 @@
 import logging
 import tempfile
 import subprocess
+import re
 
 from config import Config
 
@@ -34,8 +35,7 @@ class EventProcessor:
             logging.info(
                 'Cloning repository {} into {}'.
                 format(repo_full_name, repo_dir.name))
-            if Config.access_token:
-                repo_url_with_token = repo_url.replace("https://", "https://git:" + Config.access_token + "@")
+            repo_url_with_token = repo_url.replace("https://", "https://git:" + re.sub('[^0-9a-zA-Z]+', '', Config.access_token) + "@")
             subprocess.run(["git", "clone", repo_url_with_token, repo_dir.name], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             self.repo_cache[repo_url] = repo_dir
             # we haven't cloned this repository yet, so we don't have a baseline
