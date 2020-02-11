@@ -33,7 +33,7 @@ class DetectSecrets(Detector):
         """
         # short-circuit if we don't get a file_obj, like when we're doing
         # baseline scanning
-        if file_obj is None:
+        if file_obj is None or file_obj.patch is None:
             return []
 
         self.logger.info("instantiating detect-secrets on patch contents modifying {}".format(file_obj.filename))
