@@ -36,7 +36,7 @@ class GitSecrets(Detector):
         else:
             sp = subprocess.run([self._binary_path, "--scan"], cwd=repo_dir, capture_output=True)
 
-        if sp.returncode not in [0, 1]:
+        if sp.returncode not in [0, 1, 2]:
             self.logger.error(sp.stderr.decode())
             raise Exception("Unknown error while running git-secrets. Are bash and GNU grep installed?")
 
