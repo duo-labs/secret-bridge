@@ -91,6 +91,14 @@ To configure Slack/Teams notifications, create the following configuration optio
     webhook_url='your_webhook_url'
 ```
 
+You can also set the webhook URL via an environment variable, similar to the GitHub token noted above:
+```toml
+[notifiers.slack_webhook]
+    webhook_url='env'
+```
+
+Then set your webhook URL as an environment variable called `SLACK_WEBHOOK_URL`.
+
 Usage
 =====
 
