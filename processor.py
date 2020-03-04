@@ -1,3 +1,4 @@
+from os.path import isfile
 import logging
 import tempfile
 import subprocess
@@ -81,6 +82,9 @@ class EventProcessor:
                 commit_cache[commit_sha] = event.repo.get_commit(commit_sha)
             commit = commit_cache[commit_sha]
             for file in commit.files:
+                if not isfile(file):
+                    continue
+
                 logging.info(
                     'PushEvent {} included commit {} which modified file {}'.
                     format(event.id, commit.sha, file.filename))
