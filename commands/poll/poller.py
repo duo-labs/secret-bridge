@@ -16,7 +16,7 @@ class Poller:
                  event_types=[PUSH_EVENT_TYPE],
                  retries=DEFAULT_RETRY_COUNT):
         if not event_types:
-            event_types = [PushEventType]
+            event_types = [PUSH_EVENT_TYPE]
         self.monitors = monitors
         self.event_types = event_types
         self.retry_count = retries
