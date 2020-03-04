@@ -82,7 +82,7 @@ class EventProcessor:
                 commit_cache[commit_sha] = event.repo.get_commit(commit_sha)
             commit = commit_cache[commit_sha]
             for file in commit.files:
-                if not isfile(file):
+                if not isfile(file.filename):
                     continue
 
                 logging.info(
