@@ -23,24 +23,41 @@ def verify_signature(secret, request):
         secret {str} -- The HMAC secret
         request {flask.request} -- The HTTP request received
     """
+    print("Inside Function. print secret from config variable")
+    print(secret)
+
     if not secret:
         logging.error('No HMAC secret configured.')
         return False
     secret = secret.encode()
+    print ("Encoded secret")
+    print(secret)
+    print ("Request header received from post webhook call")
+    print(request)
 
     # Verify that the X-Hub-Signature header is provided
     signature_header = request.headers.get(GITHUB_SIGNATURE_HEADER)
     if not signature_header:
         logging.error('No {} header provided'.format(GITHUB_SIGNATURE_HEADER))
         return False
+    print("signature header from Post request header ")
+    print(signature_header)
 
     signature_parts = signature_header.split('=')
+    print("Signature part from signature header")
+    print(signature_parts)
+
     if len(signature_parts) < 2 or signature_parts[0] != "sha1":
         return False
+    
     signature = signature_parts[1]
-
     # Verify that the received signature is valid
+    print("Request data")
+    print(request.data)
     digest = hmac.new(secret, request.data, hashlib.sha1).hexdigest()
+    print("Compare Signature & Digest secret")
+    print(signature)
+    print(digest)
     return hmac.compare_digest(signature, digest)
 
 
@@ -53,6 +70,9 @@ def generate_event(payload, type=WEBHOOK_PUSH_EVENT_TYPE):
     Arguments:
         payload {dict} -- The webhook event payload
     """
+    print("Print Payload")
+    print(payload)
+
     payload['repo'] = payload['repository']
     payload.pop('repository')
 
@@ -87,10 +107,13 @@ def webhook():
         return ('', 204)
 
     secret = app.config.get('GITHUB_WEBHOOK_SECRET')
+    print("Ourside Function coming from variable")
+    print(secret)
+
     if not verify_signature(secret, request):
         abort(400, 'Bad signature')
         return
 
     event = generate_event(request.json)
     Processor.process_event(event)
-    return ('', 204)
+    return ('Scan Completed', 204)

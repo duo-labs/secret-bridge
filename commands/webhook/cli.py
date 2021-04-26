@@ -14,4 +14,5 @@ def webhook(ctx):
         return
     app.config['GITHUB_WEBHOOK_SECRET'] = secret
     logging.info('Starting webhook server at /webhook')
-    app.run(host=Config.webhook.get('host', '0.0.0.0'))
+    logging.basicConfig(level=logging.DEBUG)
+    app.run(host=Config.webhook.get('host', '0.0.0.0'),debug=True)
