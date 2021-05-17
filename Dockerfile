@@ -22,6 +22,10 @@ RUN pip install detect-secrets
 # trufflehog
 RUN pip install trufflehog
 
+
 WORKDIR /usr/src/app
 COPY . .
+RUN addgroup -S secops && adduser -S secops -G secops -s /bin/sh
+USER secops
+WORKDIR /usr/src/app
 ENTRYPOINT ["python", "main.py"]
