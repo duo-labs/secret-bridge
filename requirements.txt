@@ -13,6 +13,6 @@ PyYAML==5.4
 requests==2.22.0
 toml==0.10.0
 urllib3==1.26.5
-Werkzeug==0.16.1
+Werkzeug==2.2.3
 wrapt==1.11.2
 yapf==0.28.0
