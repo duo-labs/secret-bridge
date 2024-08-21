@@ -10,7 +10,7 @@ MarkupSafe==1.1.1
 PyGithub==1.43.8
 PyJWT==2.4.0
 PyYAML==5.4
-requests==2.31.0
+requests==2.32.2
 toml==0.10.0
 urllib3==1.26.18
 Werkzeug==3.0.1
