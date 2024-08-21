@@ -12,7 +12,7 @@ PyJWT==2.4.0
 PyYAML==5.4
 requests==2.31.0
 toml==0.10.0
-urllib3==1.26.18
+urllib3==1.26.19
 Werkzeug==3.0.1
 wrapt==1.11.2
 yapf==0.28.0
