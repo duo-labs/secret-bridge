@@ -5,7 +5,7 @@ detectors = [
 ]
 
 [auth]
-access_token='env'
+access_token=''
 
 [monitors]
     organizations = []
